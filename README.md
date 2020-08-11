@@ -1,3 +1,66 @@
+#This fork
+This is a fork of the [attila](https://github.com/zutrinken/attila), theme for ghost.
+It adds a new button for toggling between dark and light mode, reatining user preference via local storage and maintaing the autodetect functionality bases on prefers-color-scheme.
+
+To enable it you have add the following code in the code injection section of Ghost managing page.
+
+```
+<script>
+
+function detectColorScheme(){
+    var theme="light";    //default to light
+
+    //local storage is used to override OS theme settings
+    if(localStorage.getItem("theme")){
+        if(localStorage.getItem("theme") == "dark"){
+            var theme = "dark";
+        }
+    } else if(!window.matchMedia) {
+        //matchMedia method not supported
+        return false;
+    } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        //OS theme setting detected as dark
+        console.log("yo bae")
+        var theme = "dark";
+    }
+    console.log("yo wasa")
+    //dark theme preferred, set document with a `data-theme` attribute
+    if (theme=="dark") {
+         document.body.setAttribute("data-theme", "dark");
+         document.getElementById("dn").checked = true;
+    }else{
+         document.getElementById("dn").checked = false;
+    }
+}
+detectColorScheme();
+   
+//identify the toggle switch HTML element
+const toggleSwitch = document.querySelector('#dn');
+
+//function that changes the theme, and sets a localStorage variable to track the theme between page loads
+function switchTheme(e) {
+    if (e.target.checked) {
+        localStorage.setItem('theme', 'dark');
+        document.body.setAttribute('data-theme', 'dark');
+        toggleSwitch.checked = true;
+    } else {
+        localStorage.setItem('theme', 'light');
+        document.body.setAttribute('data-theme', 'light');
+        toggleSwitch.checked = false;
+    }    
+}
+
+//listener for changing themes
+toggleSwitch.addEventListener('change', switchTheme, false);
+
+//pre-check the dark-theme checkbox if dark-theme is set
+if (document.documentElement.getAttribute("data-theme") == "dark"){
+    toggleSwitch.checked = true;
+}
+</script>
+```
+You can see a functioning version of this at my blog, [blog.stlarx.com](https://blog.stlarx.com)
+
 # Attila
 
 A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). See a demo at: [attila.zutrinken.com](https://attila.zutrinken.com/)

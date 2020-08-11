@@ -8,7 +8,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 	display: block;
 	color: #66645c;
 	-webkit-text-size-adjust: none;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs {
 		color: #C7C6BC;
 	}
 }
@@ -18,7 +21,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-javadoc {
   color: #998;
   font-style: italic;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-comment,
+	.diff .hljs-header,
+	.hljs-javadoc {
 		color: #65655F;
 	}
 }
@@ -32,7 +40,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-status {
   color: #333;
   font-weight: bold;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"]{
+	.hljs-keyword,
+	.css .rule .hljs-keyword,
+	.hljs-winutils,
+	.nginx .hljs-title,
+	.hljs-subst,
+	.hljs-request,
+	.hljs-status {
 		color: #BBB;
 	}
 }
@@ -41,7 +58,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-hexcolor,
 .ruby .hljs-constant {
   color: #008080;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"]{
+	.hljs-number,
+	.hljs-hexcolor,
+	.ruby .hljs-constant {
 		color: #25B7B7;
 	}
 }
@@ -52,7 +74,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-dartdoc,
 .tex .hljs-formula {
   color: #D14;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-string,
+	.hljs-tag .hljs-value,
+	.hljs-phpdoc,
+	.hljs-dartdoc,
+	.tex .hljs-formula {
 		color: #EC2F5E;
 	}
 }
@@ -62,7 +91,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .scss .hljs-preprocessor {
   color: #900;
   font-weight: bold;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-title,
+	.hljs-id,
+	.scss .hljs-preprocessor {
 		color: #E42A2A;
 	}
 }
@@ -78,7 +112,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .tex .hljs-command {
   color: #458;
   font-weight: bold;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"]{
+	.hljs-class .hljs-title,
+	.hljs-type,
+	.vhdl .hljs-literal,
+	.tex .hljs-command {
 		color: #647ECC;
 	}
 }
@@ -89,7 +129,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .django .hljs-tag .hljs-keyword {
   color: #000080;
   font-weight: normal;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-tag,
+	.hljs-tag .hljs-title,
+	.hljs-rule .hljs-property,
+	.django .hljs-tag .hljs-keyword {
 		color: #536CF3;
 	}
 }
@@ -99,14 +145,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .lisp .hljs-body,
 .hljs-name {
   color: #008080;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-attribute,
+	.hljs-variable,
+	.lisp .hljs-body,
+	.hljs-name {
 		color: #25B7B7;
 	}
 }
 
 .hljs-regexp {
   color: #009926;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-regexp {
 		color: #61D27C;
 	}
 }
@@ -123,7 +178,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs-built_in {
   color: #0086B3;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-built_in {
 		color: #3CB1D8;
 	}
 }
@@ -136,7 +194,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-cdata {
   color: #999;
   font-weight: bold;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.hljs-preprocessor,
+	.hljs-pragma,
+	.hljs-pi,
+	.hljs-doctype,
+	.hljs-shebang,
+	.hljs-cdata {
 		color: #666;
 	}
 }

@@ -39,10 +39,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background: #FFF;
-	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
-		color: $color-text-primary-dark;
-	}
+}
+
+body[data-theme="dark"] {
+	background: $color-background-dark;
+	color: $color-text-primary-dark;	
 }
 
 button,
@@ -76,10 +77,8 @@ textarea {
 		margin: 0 0 4rem;
 		text-rendering: optimizeLegibility;
 		color: #000;
-		@media (prefers-color-scheme: dark) {
-			color: #FFF;
-		}
 	}
+
 
 	h1 {
 		font-size: 4rem;
@@ -178,9 +177,6 @@ textarea {
 		padding: 0;
 		background: $color-border;
 		border: 0;
-		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
-		}
 	}
 
 	blockquote {
@@ -216,9 +212,6 @@ textarea {
 	b,
 	strong {
 		font-weight: 700;
-		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-80;
-		}
 	}
 
 	small {
@@ -269,10 +262,6 @@ textarea {
 		border: 1px solid $color-border;
 		top: -2px;
 		white-space: pre-wrap;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
-		}
 	}
 
 	pre {
@@ -285,10 +274,6 @@ textarea {
 		background: $color-background;
 		border: 1px solid $color-border;
 		box-sizing: border-box;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
-		}
 	}
 
 	pre .lines {
@@ -307,10 +292,6 @@ textarea {
 		background: $color-background;
 		user-select: none;
 		-webkit-user-select: none;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
-		}
 	}
 
 	pre .lines .line {
@@ -349,10 +330,6 @@ textarea {
 		background: $color-background;
 		border-radius: 4px;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #FFF inset;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
-		}
 	}
 
 	table {
@@ -362,10 +339,6 @@ textarea {
 		margin: 0 0 4rem;
 		border: 1px solid $color-border;
 		background: $color-background;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-			background: $color-background-dark;
-		}
 
 		td,
 		th {
@@ -374,9 +347,6 @@ textarea {
 			font-size: 0.75em;
 			line-height: 1.33334em;
 			border: 1px solid $color-border;
-			@media (prefers-color-scheme: dark) {
-				border-color: $color-border-dark;
-			}
 		}
 
 		th {
@@ -386,9 +356,6 @@ textarea {
 			font-size: 0.75em;
 			line-height: 1.33334em;
 			color: $color-text-secondary;
-			@media (prefers-color-scheme: dark) {
-				color: $color-text-secondary-dark;
-			}
 		}
 	}
 
@@ -402,125 +369,69 @@ textarea {
 	.fluid-width-video-wrapper {
 		margin: 0 0 4rem;
 	}
+}
 
-	form {
+body[data-theme=dark] {
+	.post-content {
 
-		p {
-			margin: 0 0 2rem;
-		}
-
-		fieldset {
-				border: 0;
-				margin: 0;
-				padding: 0;
-		}
-
-		label {
-			display: block;
-			margin-bottom: 0.5rem;
-			font-family: var(--font-primary);
-			font-weight: 500;
-			color: $color-text-primary;
-			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
-			}
-		}
-
-		select,
-		textarea,
-		input[type="url"],
-		input[type="tel"],
-		input[type="text"],
-		input[type="email"],
-		input[type="month"],
-		input[type="number"],
-		input[type="search"],
-		input[type="password"] {
-			width: 100% !important;
-			height: auto !important;
-			padding: 1rem !important;
-			box-sizing: border-box;
-			transition: all ease-out 0.1s;
-			outline: none;
-			box-shadow: none;
-			-webkit-appearance: normal;
-			appearance: normal;
-			color: $color-text-primary;
-			border: 1px solid $color-border;
-			background: $color-background;
-			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
-				border-color: $color-border-dark;
-				background: $color-background-dark;
-			}
-		}
-
-		select:hover,
-		textarea:hover,
-		input[type="url"]:hover,
-		input[type="tel"]:hover,
-		input[type="text"]:hover,
-		input[type="email"]:hover,
-		input[type="month"]:hover,
-		input[type="number"]:hover,
-		input[type="search"]:hover,
-		input[type="password"]:hover {
-			border-color: $color-neutral-80;
-			@media (prefers-color-scheme: dark) {
-				border-color: $color-neutral-60;
-			}
-		}
-
-		select:focus,
-		textarea:focus,
-		input[type="url"]:focus,
-		input[type="tel"]:focus,
-		input[type="text"]:focus,
-		input[type="email"]:focus,
-		input[type="month"]:focus,
-		input[type="number"]:focus,
-		input[type="search"]:focus,
-		input[type="password"]:focus {
-			border-color: $color-primary;
-			@media (prefers-color-scheme: dark) {
-				border-color: $color-primary;
-			}
-		}
-
-		input[type="reset"],
-		input[type="submit"],
-		input[type="button"],
-		button {
-			display: block;
-			width: 100%;
-			padding: 1rem;
-			border: 0;
-			box-sizing: border-box;
-			-webkit-appearance: normal;
-			appearance: normal;
-			transition: all ease-out 0.1s;
-			background: $color-primary;
-			font-weight: 600;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
 			color: #FFF;
-			text-decoration: none;
-			text-align: center;
 		}
 
-		input[type="reset"]:hover,
-		input[type="submit"]:hover,
-		input[type="button"]:hover,
-		button:hover {
-			background: $color-primary-active;
+		hr {
+			background: $color-border-dark;
 		}
 
-		input[type="reset"]:focus,
-		input[type="submit"]:focus,
-		input[type="button"]:focus,
-		button:focus {
-			background: $color-primary-active;
+		b,
+		strong {
+			color: $color-neutral-80;
+		}
+		
+		code,
+		tt {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
+
+		pre {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}	
+
+		pre .lines {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}	
+
+		kbd {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}	
+		table {
+
+			td,
+			th {
+				border-color: $color-border-dark;
+			}	
+			th {
+				color: $color-text-secondary-dark;
+			}
+		}
+
+		table {
+			border-color: $color-border-dark;
+			background: $color-background-dark;
 		}
 	}
+
 }
+
+
 /* ==========================================================================
    KG Cards
    ========================================================================== */
@@ -533,9 +444,6 @@ textarea {
 		font-size: 0.75em;
 		line-height: 2em;
 		padding: 2rem 0;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
-		}
 
 		&:after {
 			content: '';
@@ -545,23 +453,14 @@ textarea {
 			width: 8rem;
 			height: 1px;
 			background: $color-border;
-			@media (prefers-color-scheme: dark) {
-				background: $color-border-dark;
-			}
 		}
 
 		a {
 			box-shadow: inset 0 -1px 0 $color-border;
-			@media (prefers-color-scheme: dark) {
-				box-shadow: inset 0 -1px 0 $color-border-dark;
-			}
 
 			&:focus,
 			&:hover {
 				box-shadow: inset 0 -2px 0 $color-border;
-				@media (prefers-color-scheme: dark) {
-					box-shadow: inset 0 -2px 0 $color-border-dark;
-				}
 			}
 		}
 	}
@@ -703,10 +602,6 @@ textarea {
 		border: 1px solid $color-border;
 		box-shadow: none !important;
 		overflow: hidden;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
-		}
 	}
 
 	.kg-bookmark-content {
@@ -718,9 +613,6 @@ textarea {
 		justify-content: start;
 		padding: 1.5em;
 		color: $color-text-secondary;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
-		}
 	}
 
 	.kg-bookmark-title {
@@ -729,9 +621,6 @@ textarea {
 		line-height: 1.66667em;
 		font-weight: 700;
 		letter-spacing: 0.5px;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
-		}
 	}
 
 	.kg-bookmark-description {
@@ -771,9 +660,6 @@ textarea {
 		font-weight: 400;
 		margin-top: 1em;
 		flex-wrap: wrap;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
-		}
 	}
 
 	.kg-bookmark-icon {
@@ -809,6 +695,38 @@ textarea {
 		}
 	}
 }
+
+body[data-theme="dark"] {
+	.post-content {
+		figure figcaption {
+			color: $color-text-secondary-dark;
+
+			&:after {
+				background: $color-border-dark;
+			}
+			a {
+				&:hover {
+					box-shadow: inset 0 -2px 0 $color-border-dark;
+				}
+				box-shadow: inset 0 -1px 0 $color-border-dark;
+			}
+		}
+
+		.kg-bookmark-container {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
+
+		.kg-bookmark-content {
+			color: $color-text-secondary-dark;
+		}
+
+		.kg-bookmark-title {
+			color: $color-text-primary-dark;
+		}
+	}
+}
+
 /* ==========================================================================
     Misc
     ========================================================================== */
@@ -836,10 +754,6 @@ textarea {
 	border: 2px solid $color-border;
 	background: $color-border;
 	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
-		background: $color-border-dark;
-	}
 
 	&:after,
 	&:before {
@@ -853,9 +767,6 @@ textarea {
 		border-radius: 100%;
 		background: $color-background;
 		box-sizing: border-box;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-		}
 	}
 
 	&:after {
@@ -871,6 +782,16 @@ textarea {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+}
+body[data-theme="dark"] {
+	.avatar {
+		border-color: $color-border-dark;
+		background: $color-border-dark;
+		&:after,
+		&:before {
+			background: $color-background-dark;
+		}
 	}
 }
 /* ==========================================================================
@@ -898,14 +819,19 @@ textarea {
 		padding-bottom: calc(4rem + 2vw);
 		text-align: center;
 		border-bottom: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-		}
 	}
 
 	&.has-cover .blog-box {
 		border: none;
 		padding-bottom: calc(8rem + 4vw);
+	}
+}
+
+body[data-theme="dark"] {
+	.blog-header {
+		.blog-box {
+			border-color: $color-border-dark;
+		}
 	}
 }
 
@@ -953,11 +879,13 @@ textarea {
 	line-height: 1em;
 	text-decoration: none;
 	color: #000;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.blog-name {
 		color: #FFF;
 	}
 }
-
 .has-cover .blog-name {
 	color: #FFF;
 }
@@ -970,11 +898,13 @@ textarea {
 	font-size: 3em;
 	line-height: 1.33334em;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.blog-description {
 		color: $color-text-secondary-dark;
 	}
 }
-
 .has-cover .blog-description {
 	color: #FFF;
 }
@@ -986,9 +916,6 @@ textarea {
 	&.archive-box {
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-		}
 	}
 
 	.archive-info {
@@ -1023,9 +950,6 @@ textarea {
 		line-height: 1em;
 		margin: 1rem 0;
 		color: #000;
-		@media (prefers-color-scheme: dark) {
-			color: #FFF;
-		}
 	}
 
 	.archive-description {
@@ -1035,9 +959,6 @@ textarea {
 		margin: 1rem 0;
 		font-family: var(--font-secondary);
 		color: $color-text-secondary;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
-		}
 	}
 
 	.archive-links {
@@ -1100,6 +1021,22 @@ textarea {
 	}
 }
 
+body[data-theme="dark"] {
+	.archive {
+		&.archive-box {
+			border-color: $color-border-dark;
+		}
+
+		.archive-title {
+			color: #FFF;
+		}	
+
+		.archive-description {
+			color: $color-text-secondary-dark;
+		}	
+	}
+}
+
 .has-cover {
 	.archive {
 		&.archive-box {
@@ -1158,17 +1095,11 @@ textarea {
 	overflow-y: scroll;
 	background: $color-background;
 	display: none;
-	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
-	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: block;
 		transition: all ease-out 0.3s;
 		transform: translate3d(0,100%,0);
 		border-top: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-		}
 	}
 
 	#topics {
@@ -1180,6 +1111,14 @@ textarea {
 	}
 }
 
+body[data-theme="dark"] {
+	#search {
+		background: $color-background-dark;
+		@media only screen and (max-width: $breakpoint-medium) {
+			border-color: $color-border-dark;
+		}
+	}
+}
 .search-active {
 	overflow-y: hidden;
 
@@ -1207,10 +1146,6 @@ textarea {
 		box-sizing: border-box;
 		box-shadow: none !important;
 		outline: 0 !important;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-			background: $color-background-dark;
-		}
 
 		&:focus,
 		&:hover {
@@ -1238,6 +1173,15 @@ textarea {
 	}
 }
 
+body[data-theme] {
+	.search {
+		input[type="text"] {
+			border-color: $color-border-dark;
+			background: $color-background-dark;
+		}
+	}
+}
+
 .search-close {
 	position: fixed;
 	z-index: 600;
@@ -1251,9 +1195,6 @@ textarea {
 	box-sizing: border-box;
 	cursor: pointer;
 	transition: all ease-out 0.1s;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-	}
 
 	&:after,
 	&:before {
@@ -1267,9 +1208,6 @@ textarea {
 		border-radius: 2px;
 		background: $color-neutral-60;
 		transition: all ease-out 0.1s;
-		@media (prefers-color-scheme: dark) {
-			background: $color-neutral-80;
-		}
 	}
 
 	&:after {
@@ -1289,6 +1227,15 @@ textarea {
 			background: $color-primary-active;
 		}
 	}
+}
+body[data-theme="dark"] {
+	.search-close {
+		border-color: $color-neutral-60;
+		&:after,
+		&:before {
+			background: $color-neutral-80;
+		}
+	}	
 }
 /* ==========================================================================
    Navigation
@@ -1319,11 +1266,13 @@ textarea {
 	background: #000;
 	opacity: 0.2;
 	display: none;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.nav-close {
 		opacity: 0.4;
 	}
 }
-
 .menu-active .nav-close {
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: block;
@@ -1342,9 +1291,6 @@ textarea {
 	border-top: 1px solid transparent;
 	box-sizing: border-box;
 	transition: all linear 0.1s;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: block;
 	}
@@ -1377,13 +1323,21 @@ textarea {
 		&:focus,
 		&:hover {
 			color: $color-text-primary;
-			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
-			}
 		}
 	}
 }
 
+body[data-theme="dark"] {
+	.nav-header .nav-wrapper-control {
+		color: $color-text-secondary-dark;
+		a {
+			&:focus,
+			&:hover {
+				olor: $color-text-primary-dark;
+			}
+		}
+	}
+}
 .cover-active .nav-header .nav-wrapper-control {
 	color: #FFF;
 }
@@ -1491,9 +1445,6 @@ textarea {
 		a {
 			color: $color-neutral-25;
 			font-weight: 500;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: #FFF;
 			}
@@ -1512,9 +1463,6 @@ textarea {
 		font-weight: 400;
 		cursor: pointer;
 		transition: color linear 0.1s;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
-		}
 		@media only screen and (max-width: $breakpoint-medium) {
 			font-size: 2em;
 			padding-left: 4rem;
@@ -1536,9 +1484,6 @@ textarea {
 		&:focus,
 		&:hover {
 			color: $color-neutral-25;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: $color-neutral-80;
 			}
@@ -1565,7 +1510,25 @@ textarea {
 		margin-right: 0;
 	}
 }
+body[data-theme="dark"] {
+	.nav-header li {
 
+		&.active {
+			a {
+				color: $color-neutral-90;
+			}
+		}
+
+		a {
+			color: $color-text-secondary-dark;
+
+			&:focus,
+			&:hover {
+				color: $color-neutral-90;
+			}
+		}
+	}
+}
 .cover-active {
 	.nav-wrapper-control a {
 		color: rgba(255,255,255,0.8);
@@ -1670,9 +1633,6 @@ textarea {
 	&.active a {
 		color: $color-neutral-25;
 		font-weight: 500;
-		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-90;
-		}
 	}
 
 	a {
@@ -1685,20 +1645,33 @@ textarea {
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
-		}
 		&:focus,
 		&:hover {
 			color: $color-neutral-25;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
 		}
 	}
 
 	&:last-child {
 		margin-right: 0;
+	}
+}
+
+body[data-theme="dark"] {
+	.nav-footer li {
+
+		&.active a {
+			color: $color-neutral-90;
+		}
+
+		a {
+			color: $color-text-secondary-dark;
+			
+			&:focus,
+			&:hover {
+				color: $color-neutral-90;
+			}
+		}
+
 	}
 }
 
@@ -1708,28 +1681,32 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-bottom: 1rem;
 	}
 }
 
+body[data-theme="dark"] {
+	.nav-copy {
+		color: $color-text-secondary-dark;
+	}
+}
 .nav-credits {
 	flex-shrink: 0;
 	display: block;
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
 
 	a {
 		color: inherit;
 		text-decoration: none;
 		font-weight: 500;
+	}
+}
+body[data-theme="dark"] {
+	.nav-credits {
+		color: $color-text-secondary-dark;
 	}
 }
 /* ==========================================================================
@@ -1742,14 +1719,21 @@ textarea {
 		padding-top: calc(4rem + 2vw);
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-		}
 	}
 
 	#results .post:first-child .post-box {
 		border-top: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
+	}
+}
+
+body[data-theme="dark"] {
+
+	.container {
+		.post .post-box {
+			border-color: $color-border-dark;
+		}
+
+		#results .post:first-child .post-box {
 			border-color: $color-border-dark;
 		}
 	}
@@ -1877,14 +1861,17 @@ textarea {
 	font-weight: 700;
 	text-indent: -1px;
 	color: #000;
-	@media (prefers-color-scheme: dark) {
-		color: #FFF;
-	}
 
 	a {
 		text-decoration: none;
 		color: inherit;
 		font-weight: inherit;
+	}
+}
+
+body[data-theme="dark"] {
+	.post-title {
+		color: #FFF;
 	}
 }
 
@@ -1903,10 +1890,6 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
-
 	a {
 		display: inline-block;
 		text-decoration: none;
@@ -1916,6 +1899,12 @@ textarea {
 		&:hover {
 			text-decoration: underline;
 		}
+	}
+}
+
+body[data-theme="dark"] {
+	.post-meta {
+		color: $color-text-secondary-dark;
 	}
 }
 
@@ -1938,9 +1927,6 @@ textarea {
 		width: 8rem;
 		height: 1px;
 		background: $color-border;
-		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
-		}
 	}
 
 	.post-meta-avatars {
@@ -1976,7 +1962,17 @@ textarea {
 		color: $color-text-primary;
 		font-weight: 500;
 		margin: 0;
-		@media (prefers-color-scheme: dark) {
+	}
+}
+
+body[data-theme="dark"] {
+	.post-header .post-meta {
+
+		&:before {
+			background: $color-border-dark;
+		}
+
+		.post-meta-author {
 			color: $color-text-primary-dark;
 		}
 	}
@@ -2046,7 +2042,10 @@ textarea {
 	line-height: 3rem;
 	font-weight: 400;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.post-info-label {
 		color: $color-text-secondary-dark;
 	}
 }
@@ -2084,7 +2083,13 @@ textarea {
 	&:focus,
 	&:hover {
 		background-color: $color-neutral-15;
-		@media (prefers-color-scheme: dark) {
+	}
+}
+
+body[data-theme="dark"] {
+	.post-share a {
+		&:focus,
+		&:hover {
 			background-color: $color-primary-active;
 		}
 	}
@@ -2164,14 +2169,18 @@ textarea {
 	border-top: 1px solid $color-border;
 	border-bottom: 1px solid $color-border;
 	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
-	}
 
 	&.activated {
 		background: $color-background;
 		border: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
+	}
+}
+
+body[data-theme="dark"]{
+	.post-comments {
+		border-color: $color-border-dark;
+
+		&.activated {
 			background: $color-background-dark;
 			border-color: $color-border-dark;
 		}
@@ -2192,15 +2201,18 @@ textarea {
 	cursor: pointer;
 	transition: all ease 0.2s;
 	border-radius: 2em;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-		color: $color-neutral-80;
-	}
-
+	
 	&:focus,
 	&:hover {
 		color: $color-primary-active;
 		border-color: $color-primary-active;
+	}
+}
+
+body[data-theme="dark"] {
+	.post-comments-activate {
+		border-color: $color-neutral-60;
+		color: $color-neutral-80;
 	}
 }
 
@@ -2276,7 +2288,10 @@ textarea {
 	margin-top: -1px;
 	border-top: 1px solid $color-border;
 	border-bottom: 1px solid $color-border;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.post-nav {
 		border-color: $color-border-dark;
 	}
 }
@@ -2290,11 +2305,14 @@ textarea {
 	top: 0;
 	background: $color-border;
 	z-index: 2;
-	@media (prefers-color-scheme: dark) {
-		background: $color-border-dark;
-	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: none;
+	}
+}
+
+body[data-theme="dark"] {
+	.post-nav:after {
+		background: $color-border-dark;
 	}
 }
 
@@ -2359,7 +2377,14 @@ textarea {
 			margin-bottom: -1px;
 			background: $color-border;
 			z-index: 2;
-			@media (prefers-color-scheme: dark) {
+		}
+	}
+}
+
+body[data-theme="dark"]{
+	.post-nav-teaser {
+		@media only screen and (max-width: $breakpoint-medium) {
+			&:after {
 				background: $color-border-dark;
 			}
 		}
@@ -2377,13 +2402,16 @@ textarea {
 	text-align: center;
 	transition: all ease-out 0.2s;
 	color: $color-border;
-	@media (prefers-color-scheme: dark) {
-		color: $color-border-dark;
-	}
 
 	&:before {
 		margin: 0;
 		width: auto;
+	}
+}
+
+body[data-theme="dark"] {
+	.post-nav i {
+		color: $color-border-dark;
 	}
 }
 
@@ -2409,7 +2437,10 @@ textarea {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: #000;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.post-nav-title {
 		color: #FFF;
 	}
 }
@@ -2432,7 +2463,10 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.post-nav-meta {
 		color: $color-text-secondary-dark;
 	}
 }
@@ -2472,15 +2506,18 @@ textarea {
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-		color: $color-neutral-80;
-	}
 
 	&:focus,
 	&:hover {
 		color: $color-primary-active;
 		border-color: $color-primary-active;
+	}
+}
+
+body[data-theme="dark"] {
+	.pagination a {
+		border-color: $color-neutral-60;
+		color: $color-neutral-80;
 	}
 }
 
@@ -2530,7 +2567,10 @@ textarea {
 	display: block;
 	text-align: center;
 	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
+}
+
+body[data-theme="dark"] {
+	.pagination .pagination-info {
 		color: $color-text-secondary-dark;
 	}
 }
@@ -2544,8 +2584,229 @@ textarea {
 
 	.pagination-box {
 		border-bottom: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
+	}
+}
+
+body[data-theme="dark"] {
+	.paged .extra-pagination {
+		.pagination-box {
 			border-color: $color-border-dark;
 		}
 	}
+}
+
+
+.toggleWrapper {
+	position:absolute;
+	bottom:0%;
+	right:0%;
+	overflow:hidden;
+	padding:2.5em 1em;
+	@media only screen and (max-width: $breakpoint-medium){
+		right:50%;
+		bottom:5%;
+		transform:translate3d(50%, 50%, 0);
+		//right: calc("50vw + 2.8125em");
+		//padding:0em calc("50vw + 2.8125em");
+	}
+  input {
+    position: absolute;
+    left: -99em;
+  }
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 5.625em;
+  height: 3.125em;
+  background-color: #83D8FF;
+  border-radius: 5.625em - 0.375em;
+  transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  // &:before {
+  //   content: 'AM';
+  //   position: absolute;
+  //   left: -3.125em;
+  //   top: 0.9375em;
+  //   font-size: 1.125em;
+  // }
+	//
+  // &:after {
+  //   content: 'PM';
+  //   position: absolute;
+  //   right: -3em;
+  //   top: 0.9375em;
+  //   font-size: 1.125em;
+  //   color: #749ED7;
+  // }
+}
+
+.toggle__handler {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  top: 0.1875em;
+  left: 0.1875em;
+	@media only screen and (max-width: $breakpoint-medium){
+		left: -1.225em;
+		//right: calc("50vw + 2.8125em");
+		//padding:0em calc("50vw + 2.8125em");
+	}
+  width: 3.125em - 0.375em;
+  height: 3.125em - 0.375em;
+  background-color: #FFCF96;
+  border-radius: 3.125em;
+  box-shadow: 0 0.125em 0.375em rgba(0,0,0,.3);
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform:  rotate(-45deg);
+
+  .crater {
+    position: absolute;
+    background-color: #E8CDA5;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    border-radius: 100%;
+  }
+
+  .crater--1 {
+    top: 1.125em;
+    left: 0.625em;
+    width: 0.25em;
+    height: 0.25em;
+  }
+
+  .crater--2 {
+    top: 1.75em;
+    left: 1.375em;
+    width: 0.375em;
+    height: 0.375em;
+  }
+
+  .crater--3 {
+    top: 0.625em;
+    left: 1.5625em;
+    width: 0.5em;
+    height: 0.5em;
+  }
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  transition: all 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  border-radius: 50%;
+}
+
+.star--1 {
+  top: 0.625em;
+  left: 2.1875em;
+  z-index: 0;
+  width: 1.875em;
+  height: 0.1875em;
+}
+
+.star--2 {
+  top: 1.125em;
+  left: 1.75em;
+  z-index: 1;
+  width: 1.875em;
+  height: 0.1875em;
+}
+
+.star--3 {
+  top: 1.6875em;
+  left: 2.5em;
+  z-index: 0;
+  width: 1.875em;
+  height: 0.1875em;
+}
+
+.star--4,
+.star--5,
+.star--6 {
+  opacity: 0;
+  transition: all 300ms 0 cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.star--4 {
+  top: 1em;
+  left: 0.6875em;
+  z-index: 0;
+  width: 0.125em;
+  height: 0.125em;
+  transform: translate3d(0.1875em,0,0);
+}
+
+.star--5 {
+  top: 2em;
+  left: 1.0625em;
+  z-index: 0;
+  width: 0.1875em;
+  height: 0.1875em;
+  transform: translate3d(0.1875em,0,0);
+}
+
+.star--6 {
+  top: 2.25em;
+  left: 1.75em;
+  z-index: 0;
+  width: 0.125em;
+  height: 0.125em;
+  transform: translate3d(0.1875em,0,0);
+}
+
+input:checked {
+  + .toggle {
+    background-color: #749DD6;
+
+    &:before {
+      color: #749ED7;
+    }
+
+    &:after {
+      color: #ffffff;
+    }
+
+    .toggle__handler {
+      background-color: #FFE5B5;
+      transform: translate3d(2.5em, 0, 0) rotate(0);
+
+      .crater { opacity: 1; }
+    }
+
+    .star--1 {
+      width: 0.125em;
+      height: 0.125em;
+    }
+
+    .star--2 {
+      width: 0.25em;
+      height: 0.25em;
+      transform: translate3d(-0.3125em, 0, 0);
+    }
+
+    .star--3 {
+      width: 0.125em;
+      height: 0.125em;
+      transform: translate3d(-0.4375em, 0, 0);
+    }
+
+    .star--4,
+    .star--5,
+    .star--6 {
+      opacity: 1;
+      transform: translate3d(0,0,0);
+    }
+    .star--4 {
+      transition: all 300ms 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    .star--5 {
+      transition: all 300ms 300ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+    .star--6 {
+      transition: all 300ms 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+  }
 }
