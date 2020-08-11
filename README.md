@@ -1,4 +1,4 @@
-#This fork
+# This fork
 This is a fork of the [attila](https://github.com/zutrinken/attila), theme for ghost.
 It adds a new button for toggling between dark and light mode, reatining user preference via local storage and maintaing the autodetect functionality bases on prefers-color-scheme.
 
