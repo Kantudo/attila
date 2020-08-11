@@ -62,6 +62,7 @@ if (document.documentElement.getAttribute("data-theme") == "dark"){
 You can see a functioning version of this at my blog, [blog.stlarx.com](https://blog.stlarx.com). 
 
 Credits to Benjamin Réthoré for the css toggle switch design. [https://dribbble.com/shots/2360260-AM-PM-Toggle](https://dribbble.com/shots/2360260-AM-PM-Toggle).
+
 Credits to JimmyBanks at stackoverflow for the javascript code. [https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting](https://stackoverflow.com/questions/56300132/how-to-override-css-prefers-color-scheme-setting).
 
 # Attila
