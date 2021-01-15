@@ -2597,11 +2597,12 @@ body[data-theme="dark"] {
 
 
 .toggleWrapper {
-	position:absolute;
-	bottom:-7%;
+	position: relative;
+	bottom: 35%;
 	right:0%;
 	overflow:hidden;
-	padding:2.5em 1em;
+	
+    //padding:2.5em 1em;
 	@media only screen and (max-width: $breakpoint-medium){
 		right:50%;
 		bottom:5%;
